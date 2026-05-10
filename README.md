@@ -29,6 +29,8 @@
  -  Create a new file with the name of **.env** and open it and add the following line to your **.env** file
     ```
     TOKEN={YOUR DISCORD BOT TOKEN HERE}
+    SECRET_SESSION={ENTER A SECRET KEY HERE}
+    PORT={PORT FOR SERVER (DEFAULTS TO 3000)}
     ```
     > You will need to enter your Discord Bot Token, if you do not have a bot setup currently, simply head over to https://discord.com/developers/applications and make a new bot.
 
