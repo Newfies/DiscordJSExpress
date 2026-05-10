@@ -4,6 +4,12 @@
 ## About DiscordJSExpress
  Since this is a small project I stripped the custom logging functions found in Disboot, This also won't be the best looking project. I plan to reinvent this entirely once I get it working so that I can then go all out on the customization, I just wanna know what it looks like as a functioning script first.
 
+## ⚠️ Security Note
+By default, this project allows for **code injection** to demonstrate flexibility. 
+- **To display as plain text (Safer):** Change the line in `views/home.ejs` to `<%= siteMessage %>`.
+- **To allow HTML/Script injection:** Use `<%- siteMessage %>`.
+*Use with caution if allowing public access to the Discord command.*
+
 ## Updates
  - Fully Functions!
  - Added /update <string> command that will change what is displayed on home.ejs
