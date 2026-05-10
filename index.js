@@ -12,9 +12,12 @@ const client = new Client({ intents: [ GatewayIntentBits.Guilds, GatewayIntentBi
         GatewayIntentBits.MessageContent, GatewayIntentBits.GuildMembers, ], });
 
 const express = require('express');
+const session = require('express-session');
+const path = require('path');
 
 // Script Variables
 const TOKEN = process.env.TOKEN;
+const port = process.env.PORT || 3000;
 const app = express();
 
 // SlashCommandBuilder
