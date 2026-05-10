@@ -8,7 +8,9 @@
  - Fully Functions!
  - Added /update <string> command that will change what is displayed on home.ejs
  - Allowed for code injection with the Discord bot
+
      > If you want to treat the user input as plain text only update the line on views/home.ejs to
+     
      ```
      <%= siteMessage %>
      ```
