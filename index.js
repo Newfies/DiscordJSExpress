@@ -11,8 +11,11 @@ const { Client, Events, GatewayIntentBits, EmbedBuilder, SlashCommandBuilder, Pe
 const client = new Client({ intents: [ GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, 
         GatewayIntentBits.MessageContent, GatewayIntentBits.GuildMembers, ], });
 
+const express = require('express');
+
 // Script Variables
 const TOKEN = process.env.TOKEN;
+const app = express();
 
 // SlashCommandBuilder
 function SCB(name, desc) {
@@ -52,5 +55,28 @@ client.on("interactionCreate", async (interaction) => {
   }
 });
 
+// Set
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, '/views'));
+
+// Use
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(session({
+  secret: process.env.SECRET_SESSION,
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: true }
+}));
+
+// Get
+app.get('/', function(req, res) {
+    res.render("home");
+});
+
 // Login To Bot
 client.login(TOKEN);
+
+// Listen To Server
+app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
+});
