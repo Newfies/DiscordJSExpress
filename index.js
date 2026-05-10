@@ -20,6 +20,11 @@ const TOKEN = process.env.TOKEN;
 const port = process.env.PORT || 3000;
 const app = express();
 
+// Shared Data
+let sharedData = {
+  displayString: "Default Message",
+};
+
 // SlashCommandBuilder
 function SCB(name, desc) {
   return new SlashCommandBuilder().setName(name).setDescription(desc);
@@ -27,6 +32,13 @@ function SCB(name, desc) {
 
 // Client Slash Command Makers
 const ping = SCB("ping", "Simple ping command!");
+const update = new SlashCommandBuilder()
+    .setName("update")
+    .setDescription("This updates the string displayed on the web server.")
+    .addStringOption(option =>
+        option.setName("string")
+            .setDescription("What should it display?")
+            .setRequired(true))
 
 // Client.On's
 // Ready
@@ -35,7 +47,10 @@ client.on("ready", async () => {
 
   // Client Slash Command Creators
   await client.application.commands.create(ping); // Command for /ping
-  console.log(`/ping command registered`, 1);
+  console.log(`/ping command registered`);
+  
+  await client.application.commands.create(update)
+  console.log(`/update <string> command registered`);
 
   // Set bot activity status
   client.user.setActivity({
@@ -56,6 +71,20 @@ client.on("interactionCreate", async (interaction) => {
       });
     }
   }
+
+if (interaction.commandName === "update") {
+    // 1. Get the string from the interaction options
+    const newString = interaction.options.getString("string");
+
+    // 2. Update the shared variable
+    sharedData.displayString = newString;
+
+    // 3. Reply to the user
+    await interaction.reply({
+      content: `Web server display updated to: **${newString}**`,
+      ephemeral: true,
+    });
+  }
 });
 
 // Set
@@ -73,7 +102,9 @@ app.use(session({
 
 // Get
 app.get('/', function(req, res) {
-    res.render("home");
+  res.render("home", {
+    siteMessage: sharedData.displayString,
+  });
 });
 
 // Login To Bot

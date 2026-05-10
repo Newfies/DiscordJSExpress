@@ -1,14 +1,15 @@
-## DiscordJSExpress v0.2.0
+## DiscordJSExpress v1.0.0
  A small project I am working on that will allow you to control a NodeJS Express website via a Discord bot made in NodeJS
 
 ## About DiscordJSExpress
  Since this is a small project I stripped the custom logging functions found in Disboot, This also won't be the best looking project. I plan to reinvent this entirely once I get it working so that I can then go all out on the customization, I just wanna know what it looks like as a functioning script first.
 
 ## Updates
- - Nothing Yet...
+ - Fully Functions!
+ - Added /update <string> command that will change what is displayed on home.ejs
 
 ## Plans
- - Add /update <string> command that will change what is displayed on home.ejs
+ - Redesign
 
 ### How To Setup?
  This project will require you to setup this on your own to self host.
