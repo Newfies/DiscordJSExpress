@@ -5,7 +5,7 @@
  - Nothing Here
 
 ## Plans
- - Nothing Here
+ - Add /update <string> command that will change what is displayed on home.ejs
 
 ### How To Setup?
  This project will require you to setup this on your own to self host.
