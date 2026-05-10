@@ -15,5 +15,12 @@
   "bugs": {
     "url": "https://github.com/Newfies/DiscordJSExpress/issues"
   },
-  "homepage": "https://github.com/Newfies/DiscordJSExpress#readme"
+  "homepage": "https://github.com/Newfies/DiscordJSExpress#readme",
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "nodemon": "^3.1.14",
+    "pm2": "^5.4.2",
+    "ini": "^5.0.0",
+    "discord.js": "^14.11.0"
+  }
 }
