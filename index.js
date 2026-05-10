@@ -3,8 +3,6 @@ const dotenv = require("dotenv").config();
 const fs = require('fs');
 const ini = require("ini");
 const { exec } = require("child_process");
-const pm2 = require("pm2");
-const chalk = require("chalk");
 const https = require("https");
 const { Client, Events, GatewayIntentBits, EmbedBuilder, SlashCommandBuilder, PermissionsBitField, 
         Permissions, Embed, Activity, ActivityType, ButtonBuilder, ButtonStyle, ActionRowBuilder, } = require("discord.js");
