@@ -25,11 +25,11 @@ const ping = SCB("ping", "Simple ping command!");
 // Client.On's
 // Ready
 client.on("ready", async () => {
-  log(`${client.user.tag} is now running!`, 1);
+  console.log(`${client.user.tag} is now running!`, 1);
 
   // Client Slash Command Creators
   await client.application.commands.create(ping); // Command for /ping
-  log(`/ping command registered`, 1);
+  console.log(`/ping command registered`, 1);
 
   // Set bot activity status
   client.user.setActivity({
