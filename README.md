@@ -1,4 +1,4 @@
-## DiscordJSExpress v1.0.0
+## DiscordJSExpress v1.0.1
  A small project I am working on that will allow you to control a NodeJS Express website via a Discord bot made in NodeJS
 
 ## About DiscordJSExpress
