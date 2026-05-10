@@ -1,0 +1,19 @@
+{
+  "name": "discordjsexpress",
+  "version": "0.1.0",
+  "description": "A small project I am working on that will allow you to control a NodeJS Express website via a Discord bot made in NodeJS",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Newfies/DiscordJSExpress.git"
+  },
+  "author": "Newfies",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Newfies/DiscordJSExpress/issues"
+  },
+  "homepage": "https://github.com/Newfies/DiscordJSExpress#readme"
+}

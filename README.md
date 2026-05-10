@@ -32,11 +32,11 @@
     ```
     > You will need to enter your Discord Bot Token, if you do not have a bot setup currently, simply head over to https://discord.com/developers/applications and make a new bot.
 
- -  Then when your ready to use Disboot run the following in your terminal
+ -  Then when your ready to use DiscordJSExpress run the following in your terminal
     ```
-    npm run start
+    npm start
     ```
     Or
     ```
-    node main.js
+    node index.js
     ```
